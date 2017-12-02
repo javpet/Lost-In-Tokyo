@@ -8,15 +8,15 @@ import attractions from "./data/attractions";
 // Import logo & images
 import logo from "./images/logo.svg";
 import image_1 from "./images/image_1.jpg";
-// import image_2 from "./images/image_2.jpg";
-// import image_3 from "./images/image_3.jpg";
-// import image_4 from "./images/image_4.jpg";
-// import image_5 from "./images/image_5.jpg";
-// import image_6 from "./images/image_6.jpg";
-// import image_7 from "./images/image_7.jpg";
-// import image_8 from "./images/image_8.jpg";
-// import image_9 from "./images/image_9.jpg";
-// import image_10 from "./images/image_10.jpg";
+import image_2 from "./images/image_2.jpg";
+import image_3 from "./images/image_3.jpg";
+import image_4 from "./images/image_4.jpg";
+import image_5 from "./images/image_5.jpg";
+import image_6 from "./images/image_6.jpg";
+import image_7 from "./images/image_7.jpg";
+import image_8 from "./images/image_8.jpg";
+import image_9 from "./images/image_9.jpg";
+import image_10 from "./images/image_10.jpg";
 
 const Highlight = props => {
 	return (
