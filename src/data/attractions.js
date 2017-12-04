@@ -68,6 +68,14 @@ const attractions = [
 		link: "http://www.ghibli-museum.jp/en/",
 		image: "image_9",
 		className: "w-third-l ml-auto-l"
+	},
+	{
+		title: "Big Love Record Store",
+		description:
+			"Big Love Recordsis a unique independent record store providing a homely space where enthusiasts can discover the latest alternative and underground music from all over (and some craft beers to boot).",
+		link: "http://www.bigloverecords.jp/",
+		image: "image_10",
+		className: "w-third-l ml-auto-l"
 	}
 ];
 

@@ -5,19 +5,6 @@ import ReactDOM from "react-dom";
 import menu from "./data/menu";
 import attractions from "./data/attractions";
 
-// Import logo & images
-import logo from "./images/logo.svg";
-import image_1 from "./images/image_1.jpg";
-import image_2 from "./images/image_2.jpg";
-import image_3 from "./images/image_3.jpg";
-import image_4 from "./images/image_4.jpg";
-import image_5 from "./images/image_5.jpg";
-import image_6 from "./images/image_6.jpg";
-import image_7 from "./images/image_7.jpg";
-import image_8 from "./images/image_8.jpg";
-import image_9 from "./images/image_9.jpg";
-import image_10 from "./images/image_10.jpg";
-
 const Highlight = props => {
 	return (
 		<span className={`relative highlight highlight-${props.color}`}>
@@ -48,7 +35,11 @@ const NavItem = props => {
 	return (
 		<li className={`mh-2-ns f6 f4-l tc ${props.className}`}>
 			<a className="white no-underline" href={props.href}>
-				{props.logo ? <img src={logo} alt="Lost In Tokio" className="db center logo" /> : props.children}
+				{props.logo ? (
+					<img src={require("./images/logo.svg")} alt="Lost In Tokio" className="db center logo" />
+				) : (
+					props.children
+				)}
 			</a>
 		</li>
 	);
@@ -73,7 +64,13 @@ const Overlay = props => {
 			style={{ transform: props.showInfo ? "none" : "translateY(-100%)" }}
 		>
 			<div>
-				<h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">{props.title}</h1>
+				{props.link ? (
+					<a href={props.link}>
+						<h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">{props.title}</h1>
+					</a>
+				) : (
+					<h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">{props.title}</h1>
+				)}
 				<p className="lh-title lh-copy-ns mv0 black f6 measure-l">{props.description}</p>
 			</div>
 		</div>
@@ -101,12 +98,12 @@ class Attraction extends React.Component {
 				className={`ph4 ph5-ns ph0-l mb4 mb5-ns w-100 overflow-hidden pointer attraction ${
 					this.props.className
 				}`}
-				onClick={() => this.toggleInfo()}
+				onMouseOver={() => this.toggleInfo()}
 				onMouseLeave={() => this.setState({ showInfo: false })}
 			>
 				<div className="relative">
 					<Overlay {...this.props} {...this.state} />
-					<img src={`image_${this.props.index}`} className="db" />
+					<img src={require(`./images/image_${this.props.index}.jpg`)} className="db" />
 				</div>
 			</div>
 		);
@@ -122,7 +119,7 @@ const App = () => {
 			</div>
 			<div className="flex flex-wrap container">
 				{attractions.map((attraction, index) => (
-					<Attraction key={attraction.title} index={index} {...attraction} />
+					<Attraction key={attraction.title} index={index + 1} {...attraction} />
 				))}
 			</div>
 		</div>
