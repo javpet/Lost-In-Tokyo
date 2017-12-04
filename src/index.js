@@ -106,7 +106,7 @@ class Attraction extends React.Component {
 			>
 				<div className="relative">
 					<Overlay {...this.props} {...this.state} />
-					<img src={`image_${this.props.index}`} className="db" />
+					<img src={ require(`./images/image_${this.props.index}.jpg`) } className="db" />
 				</div>
 			</div>
 		);
@@ -122,7 +122,7 @@ const App = () => {
 			</div>
 			<div className="flex flex-wrap container">
 				{attractions.map((attraction, index) => (
-					<Attraction key={attraction.title} index={index} {...attraction} />
+					<Attraction key={attraction.title} index={index + 1} {...attraction} />
 				))}
 			</div>
 		</div>
